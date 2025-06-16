@@ -1,0 +1,7 @@
+build:
+  stage: build
+  script:
+    - docker build -t spark-metrics .
+  artifacts:
+    paths:
+      - build.log
