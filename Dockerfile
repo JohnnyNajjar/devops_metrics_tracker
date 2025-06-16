@@ -1,6 +1,12 @@
-FROM openjdk:11
+FROM python:3.9-slim
+
 WORKDIR /app
-COPY app/ /app/
-RUN apt-get update && apt-get install -y python3 python3-pip
-RUN pip3 install -r requirements.txt
-CMD ["python3", "main.py"]
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY app/ ./app/
+
+CMD ["python3", "app/main.py"]
+
