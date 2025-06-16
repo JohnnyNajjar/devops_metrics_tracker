@@ -32,5 +32,5 @@ jobs:
           tags: ghcr.io/johnnynajjar/devops_metrics_tracker:latest
 
       - name: Run unit tests
-        run: docker run --rm ghcr.io/JohnnyNajjar/devops_metrics_tracker:latest python3 -m unittest discover -s app
+        run: docker run --rm ghcr.io/johnnynajjar/devops_metrics_tracker:latest python3 -m unittest discover -s app
 
