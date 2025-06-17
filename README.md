@@ -4,65 +4,99 @@
 # DevOps Metrics Tracker
 
 This project is a simple, containerized Python application with a CI/CD pipeline.  
-It's designed for deployment and testing in a DevOps environment using GitLab CI and Docker.
+It's designed for deployment, testing, and observability in a modern DevOps environment using GitHub Actions, GitLab CI, Docker, and Apache Spark.
 
 ---
 
-##  Tech Stack
+## 🚀 Tech Stack
 
-- Python  
-- Docker  
-- GitLab CI/CD  
+- Python
+- Apache Spark (via PySpark)
+- Docker
+- GitHub Actions & GitLab CI/CD
 - Bash scripting
 
 ---
 
-##  How to Run
+## 🛠️ How to Run
 
-Build the Docker container:
+### Build the Docker container:
 
 ```bash
 docker build -t devops-tracker .
 ```
 
-Run the container:
+### Run the container:
 
 ```bash
 docker run -p 8000:8000 devops-tracker
 ```
 
-Then go to:  
-http://localhost:8000
+Then open: [http://localhost:8000](http://localhost:8000)
 
 ---
 
-##  CI/CD
+## ⚙️ CI/CD Pipelines
 
-This repo includes a `.gitlab-ci.yml` file that handles:
+### GitHub Actions (`.github/workflows/docker-build.yml`)
+
+Handles:
+
+- Building and pushing Docker image to GitHub Container Registry
+- Running Python unit tests inside the container
+
+### GitLab CI (`.gitlab-ci.yml`)
+
+Handles:
 
 - Docker image build
 - Unit tests
-- Deployment steps (extend to your environment)
+- Deployment steps (customizable)
 
 ---
 
-##  Project Structure
+## 📁 Project Structure
 
 ```
 ├── app/
 │   ├── main.py
-│   └── ...
+│   ├── test_main.py
+│   └── requirements.txt
 ├── ci/
-│   └── (pipeline scripts/config)
+│   ├── build.yml
+│   ├── test.yml
+│   └── deploy.yml
 ├── deploy.sh
 ├── Dockerfile
 ├── .gitlab-ci.yml
-└── .gitignore
+├── .github/
+│   └── workflows/
+│       └── docker-build.yml
+├── .gitignore
+├── .dockerignore
+├── docker-compose.yml
+└── README.md
 ```
 
 ---
 
-##  Maintainer
+## 🧪 Testing & Quality
+
+- Unit tests using `unittest`
+- Future additions: linting with `flake8` or `black`, test coverage badge
+- Extend pipelines to enforce code quality on PRs
+
+---
+
+## 🔐 Security
+
+- Use Dependabot to monitor dependencies
+- Branch protection enabled on `main`
+- Secrets managed via GitHub/GitLab environments
+
+---
+
+## 📬 Maintainer
 
 Johnny Najjar  
 [johnny.najjar.dev@gmail.com](mailto:johnny.najjar.dev@gmail.com)
