@@ -1,5 +1,6 @@
-[![Build Status](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml)
+[!Build Status](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/JohnnyNajjar/devops_metrics_tracker.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/commits/main)
+
 # DevOps Metrics Tracker
 
 This project is a simple, containerized Python application with a CI/CD pipeline.  
@@ -28,11 +29,18 @@ docker build -t devops-tracker .
 **Run the container:**
 
 ```bash
-docker run -p 8000:8000 devops-tracker
+docker run devops-tracker
 ```
 
-Then go to:  
-http://localhost:8000
+The container runs a simple Spark job, processes mock data, and exits.
+You’ll see output like:
+
+```
+Filtered records: [Row(name='Alice', age=34), Row(name='Bob', age=45)]
+✅ Spark job completed successfully
+```
+
+> Note: This is not a web app. There is no web server or `http://localhost:8000` page.
 
 ---
 
@@ -107,4 +115,3 @@ README.md
 
 **Johnny Najjar**  
 [johnny.najjar.dev@gmail.com](mailto:johnny.najjar.dev@gmail.com)
-
