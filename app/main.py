@@ -14,4 +14,6 @@ def process_data():
     return result
 
 if __name__ == "__main__":
-    process_data()
+    result = process_data()
+    print("✅ Spark job completed successfully")
+
