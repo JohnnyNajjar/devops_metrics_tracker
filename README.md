@@ -1,4 +1,4 @@
-![Build Status](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml)
+![Build Status](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/JohnnyNajjar/devops_metrics_tracker.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/commits/main)
 
 # DevOps Metrics Tracker
@@ -8,7 +8,7 @@ It's designed for deployment and testing in a DevOps environment using GitHub Ac
 
 ---
 
-## Tech Stack
+## 🔧 Tech Stack
 
 - Python  
 - Docker  
@@ -18,15 +18,15 @@ It's designed for deployment and testing in a DevOps environment using GitHub Ac
 
 ---
 
-## How to Run
+## 🚀 How to Run
 
-Build the Docker container:
+**Build the Docker container:**
 
 ```bash
 docker build -t devops-tracker .
 ```
 
-Run the container:
+**Run the container:**
 
 ```bash
 docker run -p 8000:8000 devops-tracker
@@ -37,26 +37,22 @@ http://localhost:8000
 
 ---
 
-## CI/CD Pipelines
+## 🔁 CI/CD Pipelines
 
 ### GitHub Actions (`.github/workflows/docker-build.yml`)
 
-Handles:
-
-- Build and push Docker image to GitHub Container Registry
+- Build and push Docker image to GitHub Container Registry  
 - Run unit tests inside the container
 
 ### GitLab CI (`.gitlab-ci.yml`)
 
-Handles:
-
-- Docker image build
-- Unit tests
+- Docker image build  
+- Unit tests  
 - Deployment steps (extend to your environment)
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 ├── app/
@@ -80,7 +76,7 @@ Handles:
 
 ---
 
-## .dockerignore
+## 🧽 .dockerignore
 
 ```
 .git
@@ -96,7 +92,7 @@ README.md
 
 ---
 
-## Recommendations
+## ✅ Recommendations
 
 1. **Split CI into multiple jobs** (build, lint, test, deploy)
 2. **Add flake8 or black checks**
@@ -108,8 +104,8 @@ README.md
 
 ---
 
-## Maintainer
+## 👤 Maintainer
 
-Johnny Najjar  
+**Johnny Najjar**  
 [johnny.najjar.dev@gmail.com](mailto:johnny.najjar.dev@gmail.com)
 
