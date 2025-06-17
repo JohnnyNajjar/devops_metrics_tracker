@@ -1,49 +1,50 @@
-[![Build Status](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml)
+![Build Status](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml/badge.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/actions/workflows/docker-build.yml)
 [![GitHub last commit](https://img.shields.io/github/last-commit/JohnnyNajjar/devops_metrics_tracker.svg)](https://github.com/JohnnyNajjar/devops_metrics_tracker/commits/main)
 
 # DevOps Metrics Tracker
 
 This project is a simple, containerized Python application with a CI/CD pipeline.  
-It's designed for deployment, testing, and observability in a modern DevOps environment using GitHub Actions, GitLab CI, Docker, and Apache Spark.
+It's designed for deployment and testing in a DevOps environment using GitHub Actions, GitLab CI, Docker, and Spark.
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
-- Python
+- Python  
+- Docker  
+- GitHub Actions & GitLab CI/CD  
+- Bash scripting  
 - Apache Spark (via PySpark)
-- Docker
-- GitHub Actions & GitLab CI/CD
-- Bash scripting
 
 ---
 
-## 🛠️ How to Run
+## How to Run
 
-### Build the Docker container:
+Build the Docker container:
 
 ```bash
 docker build -t devops-tracker .
 ```
 
-### Run the container:
+Run the container:
 
 ```bash
 docker run -p 8000:8000 devops-tracker
 ```
 
-Then open: [http://localhost:8000](http://localhost:8000)
+Then go to:  
+http://localhost:8000
 
 ---
 
-## ⚙️ CI/CD Pipelines
+## CI/CD Pipelines
 
 ### GitHub Actions (`.github/workflows/docker-build.yml`)
 
 Handles:
 
-- Building and pushing Docker image to GitHub Container Registry
-- Running Python unit tests inside the container
+- Build and push Docker image to GitHub Container Registry
+- Run unit tests inside the container
 
 ### GitLab CI (`.gitlab-ci.yml`)
 
@@ -51,11 +52,11 @@ Handles:
 
 - Docker image build
 - Unit tests
-- Deployment steps (customizable)
+- Deployment steps (extend to your environment)
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── app/
@@ -73,30 +74,41 @@ Handles:
 │   └── workflows/
 │       └── docker-build.yml
 ├── .gitignore
-├── .dockerignore
 ├── docker-compose.yml
 └── README.md
 ```
 
 ---
 
-## 🧪 Testing & Quality
+## .dockerignore
 
-- Unit tests using `unittest`
-- Future additions: linting with `flake8` or `black`, test coverage badge
-- Extend pipelines to enforce code quality on PRs
+```
+.git
+.gitlab-ci.yml
+.github
+ci/
+app/test_*.py
+*.pyc
+__pycache__/
+docker-compose.yml
+README.md
+```
 
 ---
 
-## 🔐 Security
+## Recommendations
 
-- Use Dependabot to monitor dependencies
-- Branch protection enabled on `main`
-- Secrets managed via GitHub/GitLab environments
+1. **Split CI into multiple jobs** (build, lint, test, deploy)
+2. **Add flake8 or black checks**
+3. **Enable test coverage (Codecov or similar)**
+4. **Add semantic versioning + GitHub release automation**
+5. **Protect main branch + enable Dependabot**
+6. **Add screenshots or output examples in README**
+7. **Add badge for test coverage**
 
 ---
 
-## 📬 Maintainer
+## Maintainer
 
 Johnny Najjar  
 [johnny.najjar.dev@gmail.com](mailto:johnny.najjar.dev@gmail.com)
